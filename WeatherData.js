@@ -1503,5 +1503,7 @@ var allWeather = {
 // console.log("It will rain on these hours:");
 // console.log(whenWillItRain);
 
+    //switched search data to rain because 
+    //there was no sun on any day all week
 var sunnyWeek = api.sunnyWeek(allWeather.daily.data);
 console.log("it will rain all week: " + sunnyWeek);
