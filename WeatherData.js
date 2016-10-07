@@ -1490,8 +1490,15 @@ var allWeather = {
 }
 
 
-var rainToday = api.rainToday(allWeather.hourly.data);
-var rainInEight = api.rainInEightHours(allWeather.hourly.data);
+// var rainToday = api.rainToday(allWeather.hourly.data);
+// console.log(rainToday);
 
-console.log(rainToday);
-console.log(rainInEight);
+// var rainInEight = api.rainInEightHours(allWeather.hourly.data);
+// console.log(rainInEight);
+
+// var getAllTemps = api.getAllTemps(allWeather.hourly.data);
+// console.log(getAllTemps);
+
+var whenWillItRain = api.whenWillItRain(allWeather.hourly.data);
+console.log("It will rain on these hours:");
+console.log(whenWillItRain);
