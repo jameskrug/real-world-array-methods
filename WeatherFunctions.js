@@ -71,6 +71,23 @@ var hottestTemp = function(data){
 }
 
 
+var iconCount = function(data){
+    var icons = {};
+        
+    data.forEach(function(data){
+
+        if (icons[data.icon]){
+            icons[data.icon] += 1;
+        }
+        else{
+            icons[data.icon] = 1;
+        }
+    });
+        
+    
+    return icons;
+}
+
 
 module.exports = {
     rainToday: rainToday,
@@ -78,5 +95,6 @@ module.exports = {
     getAllTemps: getAllTemps,
     whenWillItRain: whenWillItRain,
     sunnyWeek: sunnyWeek,
-    hottestTemp: hottestTemp
+    hottestTemp: hottestTemp,
+    iconCount: iconCount
 }

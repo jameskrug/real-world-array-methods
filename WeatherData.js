@@ -1508,5 +1508,8 @@ var allWeather = {
 // var sunnyWeek = api.sunnyWeek(allWeather.daily.data);
 // console.log("it will rain all week: " + sunnyWeek);
 
-var hottestTemp = api.hottestTemp(allWeather.hourly.data);
-console.log("The hottest temp by hour is: " + hottestTemp);
+// var hottestTemp = api.hottestTemp(allWeather.hourly.data);
+// console.log("The hottest temp by hour is: " + hottestTemp);
+
+var iconCount = api.iconCount(allWeather.daily.data);
+console.log(iconCount);
