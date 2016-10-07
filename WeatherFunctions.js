@@ -58,7 +58,17 @@ var sunnyWeek = function(data){
 }
 
 
-
+var hottestTemp = function(data){
+    var theHottest = -Infinity;
+    data.forEach(function(x){
+        // console.log(x.temperature);
+       if (x.temperature > theHottest){
+           theHottest = x.temperature;
+       }
+    //   console.log("the hottest: " + theHottest);
+    });
+    return theHottest;
+}
 
 
 
@@ -67,5 +77,6 @@ module.exports = {
     rainInEightHours: rainInEightHours,
     getAllTemps: getAllTemps,
     whenWillItRain: whenWillItRain,
-    sunnyWeek: sunnyWeek
+    sunnyWeek: sunnyWeek,
+    hottestTemp: hottestTemp
 }

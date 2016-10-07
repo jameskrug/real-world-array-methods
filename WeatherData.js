@@ -1505,5 +1505,8 @@ var allWeather = {
 
     //switched search data to rain because 
     //there was no sun on any day all week
-var sunnyWeek = api.sunnyWeek(allWeather.daily.data);
-console.log("it will rain all week: " + sunnyWeek);
+// var sunnyWeek = api.sunnyWeek(allWeather.daily.data);
+// console.log("it will rain all week: " + sunnyWeek);
+
+var hottestTemp = api.hottestTemp(allWeather.hourly.data);
+console.log("The hottest temp by hour is: " + hottestTemp);
