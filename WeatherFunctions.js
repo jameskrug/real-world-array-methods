@@ -37,6 +37,27 @@ var whenWillItRain = function(data){
     return rainHourTimesArray;
 }
 
+var sunnyWeek = function(data){
+    var dayWords = [];
+    data.forEach(function(days){
+        dayWords.push(days.summary.split(" "));
+    });
+    console.log(dayWords);
+    var lookForWord = [];
+    dayWords.forEach(function(x){
+        var filteredWords =  x.some(function(y){
+            return y == "rain";
+            });
+        lookForWord.push(filteredWords);
+        });
+    
+    console.log(lookForWord);
+    return lookForWord.every(function(x){
+        return x;
+    });
+}
+
+
 
 
 
@@ -45,5 +66,6 @@ module.exports = {
     rainToday: rainToday,
     rainInEightHours: rainInEightHours,
     getAllTemps: getAllTemps,
-    whenWillItRain: whenWillItRain
+    whenWillItRain: whenWillItRain,
+    sunnyWeek: sunnyWeek
 }

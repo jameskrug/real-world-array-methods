@@ -1499,6 +1499,9 @@ var allWeather = {
 // var getAllTemps = api.getAllTemps(allWeather.hourly.data);
 // console.log(getAllTemps);
 
-var whenWillItRain = api.whenWillItRain(allWeather.hourly.data);
-console.log("It will rain on these hours:");
-console.log(whenWillItRain);
+// var whenWillItRain = api.whenWillItRain(allWeather.hourly.data);
+// console.log("It will rain on these hours:");
+// console.log(whenWillItRain);
+
+var sunnyWeek = api.sunnyWeek(allWeather.daily.data);
+console.log("it will rain all week: " + sunnyWeek);
