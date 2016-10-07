@@ -89,6 +89,47 @@ var iconCount = function(data){
 }
 
 
+var peopleFinder = function(data){
+
+    var bizEmails = data.filter(function(data) {
+        var splitArray = data.email.split('.');
+        return splitArray[splitArray.length-1] == "biz";
+    });
+
+
+    var cities = [];
+    bizEmails.forEach(function(x) {
+        cities.push(x.address.city);
+    });
+    
+    console.log(cities);
+    
+    var uniqueCities = {};
+    cities.forEach(function(y){
+        if (uniqueCities[y]){
+            console.log("city exists: " + y);
+        }
+        else{
+            uniqueCities[y] = "city";
+            console.log("new city: " + y)
+        }
+    });
+    console.log(uniqueCities)
+        
+}
+
+
+/*
+})
+.INSERT_ARRAY_METHOD_HERE(function() {
+
+})
+.forEach(function() {
+
+});
+
+*/
+
 module.exports = {
     rainToday: rainToday,
     rainInEightHours: rainInEightHours,
@@ -96,5 +137,6 @@ module.exports = {
     whenWillItRain: whenWillItRain,
     sunnyWeek: sunnyWeek,
     hottestTemp: hottestTemp,
-    iconCount: iconCount
+    iconCount: iconCount,
+    peopleFinder: peopleFinder
 }
