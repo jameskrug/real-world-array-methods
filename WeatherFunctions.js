@@ -29,14 +29,13 @@ var whenWillItRain = function(data){
     })
     
     var rainHourTimesArray = [];
-    
+ 
     rainHours.forEach(function(hours){
-        rainHourTimesArray.push(new Date(hours.time*1000));
+        rainHourTimesArray.push({[new Date(hours.time*1000)] : "rain"});
     });
     
     return rainHourTimesArray;
 }
-
 
 
 
