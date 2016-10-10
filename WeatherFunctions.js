@@ -90,8 +90,22 @@ var iconCount = function(data){
 
 
 var peopleFinder = function(data){
+    var cities = [];
+    var uniqueCities = {};
 
-    var bizEmails = data.filter(function(data) {
+    data.forEach(function(thisPerson) {
+        var splitArray = thisPerson.email.split('.');
+        if (splitArray[splitArray.length-1] == "biz"){
+            if (thisPerson.address.city !== uniqueCities[thisPerson.address.city]){
+                uniqueCities[thisPerson.address.city] = "city";
+            }
+        }    
+    });
+    
+        
+    return uniqueCities;
+
+/*    var bizEmails = data.filter(function(data) {
         var splitArray = data.email.split('.');
         return splitArray[splitArray.length-1] == "biz";
     });
@@ -102,33 +116,17 @@ var peopleFinder = function(data){
         cities.push(x.address.city);
     });
     
-    console.log(cities);
-    
     var uniqueCities = {};
     cities.forEach(function(y){
-        if (uniqueCities[y]){
-            console.log("city exists: " + y);
-        }
-        else{
+        if (!uniqueCities[y]){
             uniqueCities[y] = "city";
-            console.log("new city: " + y)
         }
     });
-    console.log(uniqueCities)
+    return uniqueCities;
+*/
         
 }
 
-
-/*
-})
-.INSERT_ARRAY_METHOD_HERE(function() {
-
-})
-.forEach(function() {
-
-});
-
-*/
 
 module.exports = {
     rainToday: rainToday,
